@@ -43,6 +43,7 @@ npm install -g @angular/cli
 ### Features
 
 - `Fully responsive with custom mobile design`
+- `Added redux with ngrx for state management in the app`
 - `Added Feature of fetching users by request`
 - `Added Feature of refreshing users by request`
 - `Added Loaders for users list`
