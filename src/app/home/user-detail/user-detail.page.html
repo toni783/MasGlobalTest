@@ -1,0 +1,162 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-icon (click)="onGoBack()" slot="icon-only" name="arrow-back"></ion-icon>
+
+    </ion-buttons>
+    <ion-buttons slot="end">
+      {{currentUser.name.first}} {{currentUser.name.last}} Profile
+
+      <ion-icon slot="icon-only" name="contact"></ion-icon>
+
+    </ion-buttons>
+  </ion-toolbar>
+
+
+</ion-header>
+
+<ion-content>
+
+
+
+  <ion-card>
+    <ion-item>
+      <div>
+        <ion-button (click)="takePicture()" class="camera-profile-button">
+          <ion-icon slot="icon-only" name="camera"></ion-icon>
+        </ion-button>
+
+        <img class="profile-icon" [src]="currentUser.picture.large">
+
+
+      </div>
+      <h1>General Information</h1>
+    </ion-item>
+    <ion-card-content>
+      <ion-row>
+        <ion-col size-sm="6" size-xs="12">
+          <ion-item class="card-detail-primary" lines="none">
+            <div slot="start">
+              <ion-icon class="detail-icon" slot="icon-only" name="document"></ion-icon>
+            </div>
+            <ion-label>
+              <h2> Full Name</h2>
+              <h3>{{currentUser.name.title}} {{currentUser.name.first}} {{currentUser.name.last}}</h3>
+
+            </ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col size-sm="6" size-xs="12">
+          <ion-item class="card-detail-secondary" lines="none">
+            <div slot="start">
+              <ion-icon class="detail-icon" slot="icon-only" [name]="currentUser.gender"></ion-icon>
+            </div>
+            <ion-label>
+              <h2> Gender</h2>
+              <h3>{{currentUser.gender}} </h3>
+
+            </ion-label>
+          </ion-item>
+        </ion-col>
+
+      </ion-row>
+
+
+
+      <ion-row>
+        <ion-col size="12">
+          <ion-item class="card-detail-primary" lines="none">
+            <div slot="start">
+              <ion-icon class="detail-icon" slot="icon-only" name="globe"></ion-icon>
+            </div>
+            <ion-label>
+              <h2> Location</h2>
+              <ion-row>
+                <ion-col size-sm="6" size-xs="12">
+                  <h3>Country: {{currentUser.location.country}} </h3>
+                  <h3>State: {{currentUser.location.state}} </h3>
+                  <h3>City: {{currentUser.location.city}} </h3>
+                  <h3>Street: {{currentUser.location.street.name}} #{{currentUser.location.street.number}}</h3>
+
+
+                </ion-col>
+                <ion-col size-sm="6" size-xs="12">
+                  <h3>Postcode: {{currentUser.location.postcode}} </h3>
+                  <h3>Time Zone: {{currentUser.location.timezone.description}} </h3>
+                  <h3>Coordinates: Lat.{{currentUser.location.coordinates.latitude}}
+                    Lon.{{currentUser.location.coordinates.longitude}}
+                  </h3>
+
+                </ion-col>
+
+              </ion-row>
+
+
+
+            </ion-label>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size-sm="6" size-xs="12">
+          <ion-item class="card-detail-primary" lines="none">
+            <div slot="start">
+              <ion-icon class="detail-icon" slot="icon-only" name="mail"></ion-icon>
+            </div>
+            <ion-label>
+              <h2> Email</h2>
+              <h3>{{currentUser.email}} </h3>
+
+            </ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col size-sm="6" size-xs="12">
+          <ion-item class="card-detail-secondary" lines="none">
+            <div slot="start">
+              <ion-icon class="detail-icon" slot="icon-only" name="person"></ion-icon>
+            </div>
+            <ion-label>
+              <h2> Username</h2>
+              <h3>{{currentUser.login.username}} </h3>
+
+            </ion-label>
+          </ion-item>
+        </ion-col>
+
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="12">
+          <ion-item class="card-detail-primary" lines="none">
+            <div slot="start">
+              <ion-icon class="detail-icon" slot="icon-only" name="bookmarks"></ion-icon>
+            </div>
+            <ion-label>
+              <h2> Contact Info</h2>
+              <ion-row>
+                <ion-col size-sm="6" size-xs="12">
+                  <h3>Phone: {{currentUser.phone}} </h3>
+
+
+
+                </ion-col>
+                <ion-col size-sm="6" size-xs="12">
+                  <h3>Cellphone: {{currentUser.cell}} </h3>
+
+
+                </ion-col>
+
+              </ion-row>
+
+
+
+            </ion-label>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
